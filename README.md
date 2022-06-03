@@ -10,3 +10,5 @@ timeToInitialDisplayMs   min 251.7,   median 270.0,   max 320.1
 ExampleStartupBenchmark_startupBaselineProfile
 timeToInitialDisplayMs   min 235.0,   median 239.2,   max 257.9
 ```
+
+To try this sample project, you need at least `Android Studio Dolphin | 2021.3.1 Beta 1.`
