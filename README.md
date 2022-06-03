@@ -1,6 +1,8 @@
 # baseline-profiles
 
-For recording baseline profiles, see: https://developer.android.com/topic/performance/baselineprofiles
+For recording baseline profiles for Android, see:
+
+https://developer.android.com/topic/performance/baselineprofiles
 
 Initial results on this sample Java app on a Pixel 4a device:
 
