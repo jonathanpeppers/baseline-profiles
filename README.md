@@ -82,7 +82,7 @@ Edit your `.csproj`:
 ```
 
 Edit your `AndroidManifest.xml`:
-``xml
+```xml
 <application ...>
     <profileable android:shell="true"/>
 </application>
