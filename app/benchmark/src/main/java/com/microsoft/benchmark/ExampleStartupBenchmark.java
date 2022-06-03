@@ -1,5 +1,7 @@
 package com.microsoft.benchmark;
 
+import androidx.annotation.NonNull;
+import androidx.benchmark.macro.BaselineProfileMode;
 import androidx.benchmark.macro.CompilationMode;
 import androidx.benchmark.macro.StartupMode;
 import androidx.benchmark.macro.StartupTimingMetric;
@@ -11,6 +13,9 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import java.util.Collections;
+
+import kotlin.Unit;
+import kotlin.jvm.functions.Function0;
 
 /**
  * This is an example startup benchmark.
@@ -31,11 +36,20 @@ public class ExampleStartupBenchmark {
 	public MacrobenchmarkRule mBenchmarkRule = new MacrobenchmarkRule();
 
 	@Test
-	public void startup() {
+	public void startupNoCompilation() {
+		startup(new CompilationMode.None());
+	}
+
+	@Test
+	public void startupBaselineProfile() {
+		startup(new CompilationMode.Partial(BaselineProfileMode.Require));
+	}
+
+	private void startup(CompilationMode compilationMode) {
 		mBenchmarkRule.measureRepeated(
 				"com.microsoft.baselineprofiles",
 				Collections.singletonList(new StartupTimingMetric()),
-				CompilationMode.DEFAULT,
+				compilationMode,
 				StartupMode.COLD,
 				5,
 				scope -> {
