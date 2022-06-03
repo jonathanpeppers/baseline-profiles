@@ -51,7 +51,7 @@ public class ExampleStartupBenchmark {
 				Collections.singletonList(new StartupTimingMetric()),
 				compilationMode,
 				StartupMode.COLD,
-				5,
+				10,
 				scope -> {
 					scope.pressHome();
 					scope.startActivityAndWait();
