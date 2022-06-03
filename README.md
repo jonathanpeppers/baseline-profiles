@@ -122,8 +122,21 @@ public class ExampleStartupBenchmark {
 }
 ```
 
-10. Even after all of this, I'm unsure how much this helps startup in
-    a .NET MAUI application:
+## Results?
+
+Even after all of this, I'm unsure how much this helps startup in a
+.NET MAUI application.
+
+Some example runs:
+
+```log
+ExampleStartupBenchmark_startupNoCompilation
+timeToInitialDisplayMs   min 779.2,   median 792.8,   max 795.1
+Traces: Iteration 0 1 2 3 4
+ExampleStartupBenchmark_startupBaselineProfile
+timeToInitialDisplayMs   min 758.0,   median 764.5,   max 780.6
+Traces: Iteration 0 1 2 3 4
+```
 
 ```log
 ExampleStartupBenchmark_startupNoCompilation
